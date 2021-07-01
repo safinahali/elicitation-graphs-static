@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 820.37 808.35" style="enable-background:new 0 0 820.37 808.35;" xml:space="preserve">
+<style type="text/css">
+	.st0{opacity:0.4;fill:#F9F9F9;}
+	.st1{fill:#E5E5E5;}
+	.st2{fill:#E55039;}
+	.st3{fill:#B8E994;}
+	.st4{fill:#EA8685;}
+	.st5{fill:#62C475;}
+	.st6{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10;}
+	.st7{font-family:'Helvetica-Bold';}
+	.st8{font-size:24px;}
+	.st9{font-size:21px;}
+	.st10{fill:#D1D1D1;}
+	.st11{fill:none;stroke:#EA8685;stroke-width:26;stroke-miterlimit:10;}
+	.st12{fill:none;stroke:#B8E994;stroke-width:26;stroke-miterlimit:10;}
+	.st13{fill:none;stroke:#E55039;stroke-width:26;stroke-miterlimit:10;}
+	.st14{fill:none;stroke:#62C475;stroke-width:26;stroke-miterlimit:10;}
+</style>
+<rect x="-3" y="-5" class="st0" width="827" height="827"/>
+<rect x="326" y="416.25" class="st1" width="116" height="250"/>
+<rect x="539" y="416.25" class="st1" width="116" height="250"/>
+<rect x="326" y="71.75" class="st1" width="116" height="250"/>
+<rect x="539" y="71.75" class="st1" width="116" height="250"/>
+<rect x="326" y="643.75" class="st2" width="116" height="22.5"/>
+<rect x="539" y="638.75" class="st3" width="116" height="27.5"/>
+<rect x="325.5" y="300" class="st4" width="116" height="22.5"/>
+<rect x="538.5" y="145" class="st5" width="116" height="177.5"/>
+<line class="st6" x1="263.57" y1="322" x2="718" y2="322"/>
+<line class="st6" x1="263.57" y1="666" x2="718" y2="666"/>
+<text transform="matrix(1 0 0 1 336.3218 753.0278)"><tspan x="0" y="0" class="st7 st8">Labeled </tspan><tspan x="-26" y="28.8" class="st7 st8">high risk (18)</tspan></text>
+<text transform="matrix(1 0 0 1 550.3589 753.0278)"><tspan x="0" y="0" class="st7 st8">Labeled </tspan><tspan x="4" y="28.8" class="st7 st8">low risk</tspan></text>
+<text transform="matrix(1 0 0 1 65.9956 242.0278)"><tspan x="0" y="0" class="st7 st8">Did not have</tspan><tspan x="8.64" y="28.8" class="st7 st8">cancer (80)</tspan></text>
+<text transform="matrix(1 0 0 1 66.6519 583.0278)"><tspan x="0" y="0" class="st7 st8">Actually had</tspan><tspan x="7.98" y="28.8" class="st7 st8">cancer (20)</tspan></text>
+<text transform="matrix(1 0 0 1 381.8779 317.8843)" class="st7 st9">9</text>
+<text transform="matrix(1 0 0 1 381.8779 661.8843)" class="st7 st9">9</text>
+<text transform="matrix(1 0 0 1 585.0381 242.8843)" class="st7 st9">71</text>
+<text transform="matrix(1 0 0 1 585.0381 660.8843)" class="st7 st9">11</text>
+</svg>
