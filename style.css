@@ -1,8 +1,19 @@
 .row {
-  margin-top: 40px;
+  height: 100%;
+
 }
 
 img {
-    width: 100%;
-    visibility: hidden;
+    width: 300px;
+    transition:transform 0.25s ease;
+    margin-right: 100px;
+    margin-bottom: 10px;
+
+}
+
+
+
+img:hover {
+    -webkit-transform:scale(2);
+    transform:scale(2);
 }
