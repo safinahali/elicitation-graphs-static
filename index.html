@@ -14,25 +14,179 @@
 <div class="container">
 
 	
-		  <h3>Metric elicitation graph </h3>
-		  <p>Some doctors use computer systems to identify the presence of cancer in patients’ cell images. These computer systems are not always accurate and do make errors. 
+		  <h3>Background Information </h3>
 
-			The figures below show a computer systems’ predictions for 100 patients. The figure includes how many patients were labelled as ‘high risk’ and ‘low risk’ by the computer system, and how many of them were actually cancer patients and healthy patients.
-			</p>
+		  <div id = "r1">
 
-			<div class="row"> 
-				<div class = "col-md-6">
-					<p> <b> Computer System A </b></p> 
-					<img id = "bar" src="img/bar.svg">
-					<img id = "chart" src="img/chart.svg">
-				</div>
+			<p> UID</p>		
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Response">
+			</div>
+			
+		  </div>
+
+		  <div id = "r2">
+
+			<p> What is your age?</p>		
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Response">
+			</div>
+			
+		  </div>
+
+
+		 
+		  <div id = "r3">
+			<p> Choose one or more genders that you identify as:</p>		
+			<div class="form-group">
+
+			        <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox1" value="option1" >
+			          <label class="form-check-label" for="gridCheckbox1">
+			            Woman
+			          </label>
+			        </div>
+			         <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox2" value="option2" >
+			          <label class="form-check-label" for="gridCheckbox2">
+			            Man
+			          </label>
+			        </div>
+			         <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox3" value="option3" >
+			          <label class="form-check-label" for="gridCheckbox3">
+			            Non-Binary
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox4" value="option4" >
+			          <label class="form-check-label" for="gridCheckbox4">
+			            Prefer not to disclose
+			          </label>
+			        </div>
+			          <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox5" value="option5" >
+			          <label class="form-check-label" for="gridCheckbox5">
+			            Other
+			          </label>
+			        
 			</div>
 
-		  <!-- <div class="form-group">
-		    <textarea class="form-control" id="presettext" rows="2"> Some textbox </textarea>
-		  </div> -->
+		<div id = "r4">
+			<p> Choose one or more races/ethnicities that you identify as:</p>		
+			<div class="form-group">
 
-		  <button type="button" class="btn btn-success text-right" onclick="location.href='q1.html'"> Next </button>
+			        <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox1" value="option1" >
+			          <label class="form-check-label" for="gridCheckbox1">
+			            American Indian or Alaskan Native
+			          </label>
+			        </div>
+			         <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox2" value="option2" >
+			          <label class="form-check-label" for="gridCheckbox2">
+			            Asian
+			          </label>
+			        </div>
+			         <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox3" value="option3" >
+			          <label class="form-check-label" for="gridCheckbox3">
+			            Black or African American
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox4" value="option4" >
+			          <label class="form-check-label" for="gridCheckbox4">
+			            Hispanic or Latino
+			          </label>
+			        </div>
+			          <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox5" value="option5" >
+			          <label class="form-check-label" for="gridCheckbox5">
+			            Middle Eastern
+			          </label>
+			        </div>
+			         <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox6" value="option6" >
+			          <label class="form-check-label" for="gridCheckbox6">
+			            Native Hawaiian or Pacific Islander
+			          </label>
+			        </div>
+			         <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox7" value="option7" >
+			          <label class="form-check-label" for="gridCheckbox7">
+			            White
+			          </label>
+			        </div>
+			         <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox8" value="option8" >
+			          <label class="form-check-label" for="gridCheckbox8">
+			            Prefer not to disclose
+			          </label>
+			        </div>
+			         <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox9" value="option9" >
+			          <label class="form-check-label" for="gridCheckbox9">
+			            Other
+			          </label>
+			        </div>
+			        
+			</div>
+
+		  <div id = "r5">
+			<p> What is the highest level of school you have completed or the highest degree you have received?</p>		
+			<div class="form-group">
+
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+			          <label class="form-check-label" for="gridRadios1">
+			            Less than high school
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+			          <label class="form-check-label" for="gridRadios2">
+			            High school or equivalent
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+			          <label class="form-check-label" for="gridRadios3">
+			            Some college, currently enrolled in college, or two-year associate’s degree
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="option4">
+			          <label class="form-check-label" for="gridRadios4">
+			            Bachelor's degree
+			          </label>
+			        </div>
+			         <div class="form-check">
+			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios5" value="option5">
+			          <label class="form-check-label" for="gridRadios5">
+			            Some graduate school, or currently enrolled in graduate school
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios6" value="option6">
+			          <label class="form-check-label" for="gridRadios6">
+			            Master's or professional degree
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios7" value="option7">
+			          <label class="form-check-label" for="gridRadios7">
+			            Doctorate degree
+			          </label>
+			        </div>
+			        
+			</div>
+			
+		  </div>
+
+	
+
+		  <button id = "switchbtn" type="button" class="btn btn-success text-right" onclick="location.href='prelim.html'"> Next </button>
 	</div>
 
 </div>
