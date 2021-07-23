@@ -31,7 +31,7 @@
 <line class="st6" x1="263.57" y1="322" x2="718" y2="322"/>
 <line class="st6" x1="263.57" y1="666" x2="718" y2="666"/>
 <text transform="matrix(1 0 0 1 336.3218 753.0278)"><tspan x="0" y="0" class="st7 st8">Labeled </tspan><tspan x="-26" y="28.8" class="st7 st8">high risk (18)</tspan></text>
-<text transform="matrix(1 0 0 1 550.3589 753.0278)"><tspan x="0" y="0" class="st7 st8">Labeled </tspan><tspan x="4" y="28.8" class="st7 st8">low risk</tspan></text>
+<text transform="matrix(1 0 0 1 550.3589 753.0278)"><tspan x="0" y="0" class="st7 st8">Labeled </tspan><tspan x="4" y="28.8" class="st7 st8">low risk (82)</tspan></text>
 <text transform="matrix(1 0 0 1 65.9956 242.0278)"><tspan x="0" y="0" class="st7 st8">Did not have</tspan><tspan x="8.64" y="28.8" class="st7 st8">cancer (80)</tspan></text>
 <text transform="matrix(1 0 0 1 66.6519 583.0278)"><tspan x="0" y="0" class="st7 st8">Actually had</tspan><tspan x="7.98" y="28.8" class="st7 st8">cancer (20)</tspan></text>
 <text transform="matrix(1 0 0 1 381.8779 317.8843)" class="st7 st9">9</text>
