@@ -70108,7 +70108,7 @@ function drawCharts(){
         data: {
             labels: ['False Positive', 'True Negative'],
             datasets: [{
-                label: 'Did not have cancer',
+                label: 'Hide',
                 data: [fpA*100, tnA*100],
                 backgroundColor: [
                     'rgba(255, 113, 47, 0.5)',
@@ -70121,7 +70121,11 @@ function drawCharts(){
             scales: {
                 y: {
                     beginAtZero: true,
-                    max: 100
+                    max: 100,
+                    title: {
+                      text: 'Did not have cancer',
+                      display: true
+                    }
                 }
             }
         }
@@ -70133,7 +70137,7 @@ function drawCharts(){
         data: {
             labels: ['True Positive', 'False Negative'],
             datasets: [{
-                label: 'Actually had cancer',
+                label: 'Hide',
                 data: [tpA*100, fnA*100],
                 backgroundColor: [
                     'rgba(255, 113, 47)',
@@ -70146,7 +70150,11 @@ function drawCharts(){
             scales: {
                 y: {
                     beginAtZero: true,
-                    max: 100
+                    max: 100,
+                    title: {
+                      text: 'Actually had cancer',
+                      display: true
+                    }
                 }
             }
         }
@@ -70158,7 +70166,7 @@ function drawCharts(){
         data: {
             labels: ['False Positive', 'True Negative'],
             datasets: [{
-                label: 'Did not have cancer',
+                label: 'Hide',
                 data: [fpB*100, tnB*100],
                 backgroundColor: [
                     'rgba(255, 113, 47, 0.5)',
@@ -70171,7 +70179,11 @@ function drawCharts(){
             scales: {
                 y: {
                     beginAtZero: true,
-                    max: 100
+                    max: 100,
+                    title: {
+                      text: 'Did not have cancer',
+                      display: true
+                    }
                 }
             }
         }
@@ -70183,7 +70195,7 @@ function drawCharts(){
         data: {
             labels: ['True Positive', 'False Negative'],
             datasets: [{
-                label: 'Actually had cancer',
+                label: 'Hide',
                 data: [tpB*100, fnB*100],
                 backgroundColor: [
                     'rgba(255, 113, 47)',
@@ -70196,7 +70208,11 @@ function drawCharts(){
             scales: {
                 y: {
                     beginAtZero: true,
-                    max: 100
+                    max: 100,
+                    title: {
+                      text: 'Actually had cancer',
+                      display: true
+                    }
                 }
             }
         }
