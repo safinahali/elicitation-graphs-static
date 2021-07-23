@@ -70012,55 +70012,93 @@ var thresholdA = 0;
 var thresholdB = 1;
 var myChart1;
 var myChart2;
-var myChart3;;
-var myChart4;;
+var myChart3;
+var myChart4;
+var tnA, tpA, fnA, fpA, tnB, tpB, fpB, fnA;
+var buttonCount = 0;
 
 function setThresholdsA(){
+    buttonCount++;
     thresholdB = (thresholdA+thresholdB)/2;
-    setValues();
-    const context = document.getElementById('myChart1').getContext('2d');
-    context.clearRect(0, 0, canvas.width, canvas.height);
+    // const context = document.getElementById('myChart1').getContext('2d');
+    // context.clearRect(0, 0, canvas.width, canvas.height);
+    document.getElementById('myChart1').remove();
+    document.getElementById('myChart2').remove();
+    document.getElementById('myChart3').remove();
+    document.getElementById('myChart4').remove();
+
     drawCharts();
+
+    //GAURUSH: change the other texts here too. This is only changing the arrow texts. Use same format.
+    document.getElementById('tpB').textContent = (tpB*100).toFixed(4);
+    document.getElementById('fpB').textContent = (fpB*100).toFixed(4);
+    document.getElementById('fnB').textContent = (fnB*100).toFixed(4);
+    document.getElementById('tnB').textContent = (tnB*100).toFixed(4);
 }
 
 function setThresholdsB(){
+    buttonCount++;
+
     thresholdA = (thresholdA+thresholdB)/2;
-    setValues();
-}
 
-function setValues(){
-    for (element in dataset){
-        if(dataset[element].threshold.toFixed(4) == thresholdA){
-            var tnA = dataset[element].tn;
-            var tpA = dataset[element].tp;
-            var fnA = dataset[element].fn;
-            var fpA = dataset[element].fp;
-        }
+    document.getElementById('myChart1').remove();
+    document.getElementById('myChart2').remove();
+    document.getElementById('myChart3').remove();
+    document.getElementById('myChart4').remove();
 
-        if(dataset[element].threshold.toFixed(4) == thresholdB){
-            var tnB = dataset[element].tn;
-            var tpB = dataset[element].tp;
-            var fnB = dataset[element].fn;
-            var fpB = dataset[element].fp;
-        }
-    }
+    drawCharts();
+
+    //GAURUSH: change the other texts here too. This is only changing the arrow texts. Use same format.
+    document.getElementById('tpA').textContent = (tpA*100).toFixed(4);
+    document.getElementById('fpA').textContent = (fpA*100).toFixed(4);
+    document.getElementById('fnA').textContent = (fnA*100).toFixed(4);
+    document.getElementById('tnA').textContent = (tnA*100).toFixed(4);
 }
 
 function drawCharts(){
+    if (buttonCount>0){
+      var myChart1 = document.createElement('canvas');
+      myChart1.setAttribute("id", "myChart1");
+      myChart1.setAttribute("width", "600");
+      myChart1.setAttribute("height", "200");
+      const chartcol1 = document.getElementById("chartcol1");
+      chartcol1.appendChild(myChart1);
+
+      var myChart2 = document.createElement('canvas');
+      myChart2.setAttribute("id", "myChart2");
+
+      myChart2.setAttribute("width", "600");
+      myChart2.setAttribute("height", "200");
+      chartcol1.appendChild(myChart2);
+
+      var myChart3 = document.createElement('canvas');
+      myChart3.setAttribute("id", "myChart3");
+
+      myChart3.setAttribute("width", "600");
+      myChart3.setAttribute("height", "200");
+      const chartcol2 = document.getElementById("chartcol2");
+      chartcol2.appendChild(myChart3);
+
+      var myChart4 = document.createElement('canvas');
+      myChart4.setAttribute("id", "myChart4");
+      myChart4.setAttribute("width", "600");
+      myChart4.setAttribute("height", "200");
+      chartcol2.appendChild(myChart4);
+    }
 
     for (element in dataset){
         if(dataset[element].threshold.toFixed(4) == thresholdA){
-            var tnA = dataset[element].tn;
-            var tpA = dataset[element].tp;
-            var fnA = dataset[element].fn;
-            var fpA = dataset[element].fp;
+            tnA = dataset[element].tn;
+            tpA = dataset[element].tp;
+            fnA = dataset[element].fn;
+            fpA = dataset[element].fp;
         }
 
         if(dataset[element].threshold.toFixed(4) == thresholdB){
-            var tnB = dataset[element].tn;
-            var tpB = dataset[element].tp;
-            var fnB = dataset[element].fn;
-            var fpB = dataset[element].fp;
+            tnB = dataset[element].tn;
+            tpB = dataset[element].tp;
+            fnB = dataset[element].fn;
+            fpB = dataset[element].fp;
         }
     }
 
@@ -70090,7 +70128,7 @@ function drawCharts(){
     });
 
     var ctx2 = document.getElementById('myChart2').getContext('2d');
-    var myChart2 = new Chart(ctx2, {
+    myChart2 = new Chart(ctx2, {
         type: 'bar',
         data: {
             labels: ['True Positive', 'False Negative'],
@@ -70115,7 +70153,7 @@ function drawCharts(){
     });
 
     var ctx3 = document.getElementById('myChart3').getContext('2d');
-    var myChart3 = new Chart(ctx3, {
+    myChart3 = new Chart(ctx3, {
         type: 'bar',
         data: {
             labels: ['False Positive', 'True Negative'],
@@ -70140,7 +70178,7 @@ function drawCharts(){
     });
 
     var ctx4 = document.getElementById('myChart4').getContext('2d');
-    var myChart4 = new Chart(ctx4, {
+    myChart4 = new Chart(ctx4, {
         type: 'bar',
         data: {
             labels: ['True Positive', 'False Negative'],

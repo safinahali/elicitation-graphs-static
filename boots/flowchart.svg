@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.3.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 820.4 510.3" style="enable-background:new 0 0 820.4 510.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#D1D1D1;}
+	.st2{fill:none;stroke:#EA8685;stroke-width:26;stroke-miterlimit:10;}
+	.st3{fill:#EA8685;}
+	.st4{fill:none;stroke:#B8E994;stroke-width:26;stroke-miterlimit:10;}
+	.st5{fill:#B8E994;}
+	.st6{fill:none;stroke:#E55039;stroke-width:26;stroke-miterlimit:10;}
+	.st7{fill:#E55039;}
+	.st8{fill:none;stroke:#62C475;stroke-width:26;stroke-miterlimit:10;}
+	.st9{fill:#62C475;}
+	.st10{font-family:'Helvetica-Bold';}
+	.st11{font-size:18.3771px;}
+	.st12{font-size:21.0024px;}
+</style>
+<rect x="-3" class="st0" width="827" height="519"/>
+<path class="st1" d="M270.5,171.9H112c-7.2,0-13.1-5.9-13.1-13.1V83.5c0-7.2,5.9-13.1,13.1-13.1h158.5c7.2,0,13.1,5.9,13.1,13.1
+	v75.3C283.5,166,277.7,171.9,270.5,171.9z"/>
+<path class="st1" d="M715,172H556.5c-7.2,0-13.1-5.9-13.1-13.1V83.5c0-7.2,5.9-13.1,13.1-13.1H715c7.2,0,13.1,5.9,13.1,13.1v75.3
+	C728.1,166.1,722.2,172,715,172z"/>
+<path class="st1" d="M270.5,428.6H112c-7.2,0-13.1-5.9-13.1-13.1v-75.3c0-7.2,5.9-13.1,13.1-13.1h158.5c7.2,0,13.1,5.9,13.1,13.1
+	v75.3C283.5,422.8,277.7,428.6,270.5,428.6z"/>
+<path class="st1" d="M715,428.6H556.5c-7.2,0-13.1-5.9-13.1-13.1v-75.3c0-7.2,5.9-13.1,13.1-13.1H715c7.2,0,13.1,5.9,13.1,13.1v75.3
+	C728.1,422.8,722.2,428.6,715,428.6z"/>
+<g>
+	<g>
+		<path class="st2" d="M283.5,142.4h64.1c0.7,0,1.4,0,2.1-0.1c6.6-0.5,54.6-1.1,67.1,79.5c12.3,78.8,27.4,121.9,103.2,128.8"/>
+		<g>
+			<polygon class="st3" points="517.9,323.5 515.3,377.2 543.5,351.6 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<path class="st4" d="M283.5,361.1h54.7c3.8,0,7.5-0.6,11.1-1.9c14.4-5.2,49.5-23,67.6-77.5c24.2-72.9,29.4-128.8,103.3-138.1"/>
+		<g>
+			<polygon class="st5" points="514.9,117.1 518.4,170.8 543.5,142.2 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st6" x1="283.5" y1="94.7" x2="520.2" y2="94.7"/>
+		<g>
+			<polygon class="st7" points="516.6,67.8 516.6,121.6 543.5,94.7 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st8" x1="283.5" y1="403" x2="520.2" y2="403"/>
+		<g>
+			<polygon class="st9" points="516.6,376.1 516.6,429.9 543.5,403 			"/>
+		</g>
+	</g>
+</g>
+<text id="tpA" transform="matrix(1 0 0 1 374.4521 102.7202)" class="st10 st11">34.856</text>
+<text id="fpA" transform="matrix(1 0 0 1 375.3267 157.8516)" class="st10 st11">65.144</text>
+<text id="fnA" transform="matrix(1 0 0 1 370.2168 348.624)" class="st10 st11">0</text>
+<text id="tnA" transform="matrix(1 0 0 1 369.3418 409.8809)" class="st10 st11">0</text>
+<text transform="matrix(1 0 0 1 148.1895 112.5239)" class="st10 st12">Labeled </text>
+<text transform="matrix(1 0 0 1 125.4312 137.7256)" class="st10 st12">high risk (18)</text>
+<text transform="matrix(1 0 0 1 148.1895 369.2383)" class="st10 st12">Labeled </text>
+<text transform="matrix(1 0 0 1 130.0967 394.4395)" class="st10 st12">low risk (82)</text>
+<text transform="matrix(1 0 0 1 572.9023 112.4717)" class="st10 st12">Actually had</text>
+<text transform="matrix(1 0 0 1 579.8838 137.6738)" class="st10 st12">cancer (20)</text>
+<text transform="matrix(1 0 0 1 572.3281 369.752)" class="st10 st12">Did not have</text>
+<text transform="matrix(1 0 0 1 579.8887 394.9541)" class="st10 st12">cancer (80)</text>
+</svg>
