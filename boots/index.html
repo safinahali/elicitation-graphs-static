@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Metric Graphs</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- <script type="text/javascript" src = "charts.js"></script> -->
+</head>
+<body onload="drawCharts()">
+
+    <div class="container">
+        <h4>Metric Elicitation Graphs</h4>
+          <div class="row">
+            <div class="col-sm-6">
+              <p><b> Computer System A </b></p>
+              <canvas id="myChart1" width="600" height="400"></canvas>
+              <canvas id="myChart2" width="600" height="400"></canvas>
+              <button type="button" class="btn btn-success" id = "preferA" onClick = "setThresholdsA()">I prefer this one</button>
+
+            </div>
+            <div class="col-sm-6">
+              <p><b> Computer System B </b></p>
+              <canvas id="myChart3" width="600" height="400"></canvas>
+              <canvas id="myChart4" width="600" height="400"></canvas>
+              <button type="button" class="btn btn-success" id = "preferB" onClick = "setThresholdsB()">I prefer this one</button>
+
+            </div>
+          </div>
+    </div>
+<script src="p5.js"></script>
+<script type="text/javascript" src = "charts.js"></script>
+
+</body>
+</html>
