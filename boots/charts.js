@@ -70030,10 +70030,10 @@ function setThresholdsA(){
     drawCharts();
 
     //GAURUSH: change the other texts here too. This is only changing the arrow texts. Use same format.
-    document.getElementById('tpB').textContent = (tpB*100).toFixed(4);
-    document.getElementById('fpB').textContent = (fpB*100).toFixed(4);
-    document.getElementById('fnB').textContent = (fnB*100).toFixed(4);
-    document.getElementById('tnB').textContent = (tnB*100).toFixed(4);
+    document.getElementById('tpB').textContent = (tpB*100).toFixed(0);
+    document.getElementById('fpB').textContent = (fpB*100).toFixed(0);
+    document.getElementById('fnB').textContent = (fnB*100).toFixed(0);
+    document.getElementById('tnB').textContent = (tnB*100).toFixed(0);
 }
 
 function setThresholdsB(){
@@ -70049,10 +70049,10 @@ function setThresholdsB(){
     drawCharts();
 
     //GAURUSH: change the other texts here too. This is only changing the arrow texts. Use same format.
-    document.getElementById('tpA').textContent = (tpA*100).toFixed(4);
-    document.getElementById('fpA').textContent = (fpA*100).toFixed(4);
-    document.getElementById('fnA').textContent = (fnA*100).toFixed(4);
-    document.getElementById('tnA').textContent = (tnA*100).toFixed(4);
+    document.getElementById('tpA').textContent = (tpA*100).toFixed(0);
+    document.getElementById('fpA').textContent = (fpA*100).toFixed(0);
+    document.getElementById('fnA').textContent = (fnA*100).toFixed(0);
+    document.getElementById('tnA').textContent = (tnA*100).toFixed(0);
 }
 
 function drawCharts(){
