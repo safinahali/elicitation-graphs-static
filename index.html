@@ -8,6 +8,51 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="style.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+	     https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
+	<link rel="icon" type="image/png" href="/favicon.png"/>
+
+	<script>
+	  // Your web app's Firebase configuration
+	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	  var firebaseConfig = {
+	    apiKey: "AIzaSyDSBbFAqBoxyeauD8Floci3BrD0UkvOhgg",
+	    authDomain: "metric-elicitation.firebaseapp.com",
+	    databaseURL: "https://metric-elicitation-default-rtdb.firebaseio.com",
+	    projectId: "metric-elicitation",
+	    storageBucket: "metric-elicitation.appspot.com",
+	    messagingSenderId: "828132856142",
+	    appId: "1:828132856142:web:1a7f9b6680ed64d1348e1f",
+	    measurementId: "G-ZSLY684MQG"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  firebase.analytics();
+	  database = firebase.database();
+
+	  //data logging is set up here. need to log all the data selected
+	  function logdata(){
+	  	var uid = document.getElementById('uid').value;
+	  	var age = document.getElementById('age').value;
+	  	var ref = database.ref(uid);
+	  	ref.push({
+	  		UID: uid,
+	  		Age: age
+	  	});
+	  }
+
+	  
+
+	</script>
+
 </head>
 <body>
 
@@ -20,7 +65,7 @@
 
 			<p> UID</p>		
 			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Response">
+				<input type="text" class="form-control" placeholder="Response" id = "uid">
 			</div>
 			
 		  </div>
@@ -29,7 +74,7 @@
 
 			<p> What is your age?</p>		
 			<div class="form-group">
-				<input type="text" class="form-control" placeholder="Response">
+				<input type="text" class="form-control" placeholder="Response" id = "age">
 			</div>
 			
 		  </div>
@@ -39,7 +84,6 @@
 		  <div id = "r3">
 			<p> Choose one or more genders that you identify as:</p>		
 			<div class="form-group">
-
 			        <div class="form-check">
 			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox1" value="option1" >
 			          <label class="form-check-label" for="gridCheckbox1">
@@ -220,10 +264,7 @@
 			</div>
 		  </div>
 
-	
-
-		  <button id = "switchbtn" type="button" class="btn btn-success text-right" onclick="location.href='prelim.html'"> Next </button>
-
+		  <button id = "switchbtn" type="button" class="btn btn-success text-right" onclick="logdata()"> Next </button>
 </div>
 
 </body>
