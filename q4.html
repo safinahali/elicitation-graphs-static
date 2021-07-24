@@ -42,17 +42,34 @@
 	  //data logging is set up here. need to log all the data selected
 	  function logdata(){
 	  	var uid = localStorage.getItem("uid");
+	  	var q41;
+	  	var q42;
+	  	var q41Check = document.getElementsByName('q41');
+	  	var q42Check = document.getElementsByName('q42');
+
+	  	for (var i=0;i<q41Check.length;i++){
+		  if ( q41Check[i].checked ) {
+		    q41 = q41Check[i].value;
+		  }
+		}
+
+		for (var i=0;i<q42Check.length;i++){
+		  if ( q42Check[i].checked ) {
+		    q42 = q42Check[i].value;
+		  }
+		}
 
 	  	var ref = database.ref(uid);
 	  	ref.push({
 	  		UID: uid,
-	  		question: "q1"
+	  		q41: q41,
+	  		q42: q42,
 	  	});
 
 	  	window.setTimeout(function(){
 
         // Move to a new location or you can do something else
-        window.location.href = "q5.html";
+        window.location.href = "boots/index.html";
 
     	}, 1000);
 
@@ -90,13 +107,13 @@
 			<div class="form-group">
 
 			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+			          <input class="form-check-input" type="radio" name="q41" id="gridRadios1" value="option1" checked>
 			          <label class="form-check-label" for="gridRadios1">
 			            Computer System A
 			          </label>
 			        </div>
 			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+			          <input class="form-check-input" type="radio" name="q42" id="gridRadios2" value="option2">
 			          <label class="form-check-label" for="gridRadios2">
 			            Computer System B
 			          </label>

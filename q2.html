@@ -42,11 +42,34 @@
 	  //data logging is set up here. need to log all the data selected
 	  function logdata(){
 	  	var uid = localStorage.getItem("uid");
+	  	var q21;
+	  	var q22;
+	  	var q21Check = document.getElementsByName('q21');
+	  	var q22Check = document.getElementsByName('q22');
+	  	var q23 = document.getElementById('q23').value;
+	  	var q24 = document.getElementById('q24').value;
+
+
+
+	  	for (var i=0;i<q21Check.length;i++){
+		  if ( q21Check[i].checked ) {
+		    q21 = q21Check[i].value;
+		  }
+		}
+
+		for (var i=0;i<q22Check.length;i++){
+		  if ( q22Check[i].checked ) {
+		    q22 = q22Check[i].value;
+		  }
+		}
 
 	  	var ref = database.ref(uid);
 	  	ref.push({
 	  		UID: uid,
-	  		question: "q1"
+	  		q21: q21,
+	  		q22: q22,
+	  		q23: q23,
+	  		q24: q24
 	  	});
 
 	  	window.setTimeout(function(){
@@ -90,13 +113,13 @@
 			<div class="form-group">
 
 			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+			          <input class="form-check-input" type="radio" name="q21" id="gridRadios1" value="A" checked>
 			          <label class="form-check-label" for="gridRadios1">
 			            Computer System A
 			          </label>
 			        </div>
 			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+			          <input class="form-check-input" type="radio" name="q21" id="gridRadios2" value="B">
 			          <label class="form-check-label" for="gridRadios2">
 			            Computer System B
 			          </label>
@@ -112,13 +135,13 @@
 			<div class="form-group">
 
 			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" >
+			          <input class="form-check-input" type="radio" name="q22" id="gridRadios1" value="A" >
 			          <label class="form-check-label" for="gridRadios1">
 			            Computer System A
 			          </label>
 			        </div>
 			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+			          <input class="form-check-input" type="radio" name="q22" id="gridRadios2" value="B">
 			          <label class="form-check-label" for="gridRadios2">
 			            Computer System B
 			          </label>
@@ -132,7 +155,7 @@
 
 			<p> In Computer System A, among patients who did not have cancer, what percentage were labelled as high risk?</p>		
 			<div class="form-group">
-			    <input type="text" class="form-control" placeholder="Response">
+			    <input type="text" class="form-control" placeholder="Response" id = "q23">
 			</div>
 			
 		  </div>
@@ -141,7 +164,7 @@
 
 			<p> In Computer System A, among patients who were labelled as high risk, what percentage did not have cancer?</p>		
 			<div class="form-group">
-			    <input type="text" class="form-control" placeholder="Response">
+			    <input type="text" class="form-control" placeholder="Response" id = "q24">
 			</div>
 			
 		  </div>
