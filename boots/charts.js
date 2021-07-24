@@ -70030,10 +70030,14 @@ function setThresholdsA(){
     drawCharts();
 
     //GAURUSH: change the other texts here too. This is only changing the arrow texts. Use same format.
-    document.getElementById('tpB').textContent = (tpB*100).toFixed(0);
-    document.getElementById('fpB').textContent = (fpB*100).toFixed(0);
-    document.getElementById('fnB').textContent = (fnB*100).toFixed(0);
-    document.getElementById('tnB').textContent = (tnB*100).toFixed(0);
+//     document.getElementById('tpB').textContent = (tpB*100).toFixed(0);
+//     document.getElementById('fpB').textContent = (fpB*100).toFixed(0);
+//     document.getElementById('fnB').textContent = (fnB*100).toFixed(0);
+//     document.getElementById('tnB').textContent = (tnB*100).toFixed(0);
+    document.getElementById('tpB').textContent = tpB;
+    document.getElementById('fpB').textContent = fpB;
+    document.getElementById('fnB').textContent = fnB;
+    document.getElementById('tnB').textContent = tnB;
 }
 
 function setThresholdsB(){
@@ -70049,10 +70053,14 @@ function setThresholdsB(){
     drawCharts();
 
     //GAURUSH: change the other texts here too. This is only changing the arrow texts. Use same format.
-    document.getElementById('tpA').textContent = (tpA*100).toFixed(0);
-    document.getElementById('fpA').textContent = (fpA*100).toFixed(0);
-    document.getElementById('fnA').textContent = (fnA*100).toFixed(0);
-    document.getElementById('tnA').textContent = (tnA*100).toFixed(0);
+//     document.getElementById('tpA').textContent = (tpA*100).toFixed(0);
+//     document.getElementById('fpA').textContent = (fpA*100).toFixed(0);
+//     document.getElementById('fnA').textContent = (fnA*100).toFixed(0);
+//     document.getElementById('tnA').textContent = (tnA*100).toFixed(0);
+    document.getElementById('tpA').textContent = tpA;
+    document.getElementById('fpA').textContent = fpA;
+    document.getElementById('fnA').textContent = fnA;
+    document.getElementById('tnA').textContent = tnA;
 }
 
 function drawCharts(){
@@ -70109,7 +70117,8 @@ function drawCharts(){
             labels: ['False Positive', 'True Negative'],
             datasets: [{
                 label: 'Hide',
-                data: [fpA*100, tnA*100],
+//                 data: [fpA*100, tnA*100],
+                data: [fpA, tnA],
                 backgroundColor: [
                     'rgba(255, 113, 47, 0.5)',
                     'rgba(54, 114, 241)'
@@ -70138,7 +70147,8 @@ function drawCharts(){
             labels: ['True Positive', 'False Negative'],
             datasets: [{
                 label: 'Hide',
-                data: [tpA*100, fnA*100],
+//                 data: [tpA*100, fnA*100],
+                data: [tpA, fnA],
                 backgroundColor: [
                     'rgba(255, 113, 47)',
                     'rgba(54, 114, 241, 0.5)'
@@ -70167,7 +70177,8 @@ function drawCharts(){
             labels: ['False Positive', 'True Negative'],
             datasets: [{
                 label: 'Hide',
-                data: [fpB*100, tnB*100],
+//                 data: [fpB*100, tnB*100],
+                data: [fpB, tnB],
                 backgroundColor: [
                     'rgba(255, 113, 47, 0.5)',
                     'rgba(54, 114, 241)'
@@ -70196,7 +70207,8 @@ function drawCharts(){
             labels: ['True Positive', 'False Negative'],
             datasets: [{
                 label: 'Hide',
-                data: [tpB*100, fnB*100],
+//                 data: [tpB*100, fnB*100],
+                data: [tpB, fnB],
                 backgroundColor: [
                     'rgba(255, 113, 47)',
                     'rgba(54, 114, 241, 0.5)'
