@@ -39,8 +39,8 @@ function setThresholdsA(){
     document.getElementById('fnB').textContent = fnB;
     document.getElementById('tnB').textContent = tnB;
 
-    document.getElementById('totalHighB').textContent = "high risk (" + pred_p_B + ")" ;
-    document.getElementById('totalLowB').textContent = "low risk (" + pred_n_B + ")" ;
+    document.getElementById('predHighB').textContent = "high risk (" + pred_p_B + ")" ;
+    document.getElementById('predLowB').textContent = "low risk (" + pred_n_B + ")" ;
 }
 
 function setThresholdsB(){
@@ -65,8 +65,8 @@ function setThresholdsB(){
     document.getElementById('tnA').textContent = tnA;
 
     //GAURUSH: write your high number logic here
-    document.getElementById('totalHighA').textContent = "high risk (" + pred_p_A + ")" ;
-    document.getElementById('totalLowA').textContent = "low risk (" + pred_n_A + ")" ;
+    document.getElementById('predHighA').textContent = "high risk (" + pred_p_A + ")" ;
+    document.getElementById('predLowA').textContent = "low risk (" + pred_n_A + ")" ;
 }
 
 function drawCharts(){
@@ -131,6 +131,7 @@ function drawCharts(){
         type: 'bar',
         data: {
 //             labels: ['False Positive', 'True Negative'],
+            labels: ['', ''],
             datasets: [{
                 label: '',
 //                 data: [fpA*100, tnA*100],

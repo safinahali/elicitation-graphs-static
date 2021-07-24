@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cancer Diagnosis</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- <script type="text/javascript" src = "charts.js"></script> -->
+</head>
+<body onload="drawCharts()">
+
+    <div class="container">
+        <h4>Cancer Diagnosis</h4>
+          <div class="row">
+            <div class="col-sm-5">
+              <p><b> Computer System A </b></p>
+              <div id = "chartcol1">
+              <canvas id="myChart1" width="600" height="200"></canvas>
+              <canvas id="myChart2" width="600" height="200"></canvas>
+             </div>
+
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 820.37 808.35" style="enable-background:new 0 0 820.37 808.35;" xml:space="preserve">
+                
+                <rect x="-3" y="-5" class="st0" width="827" height="827"/>
+                <path class="st7" d="M245.5,307.47H59.37c-8.49,0-15.37-6.88-15.37-15.37v-88.49c0-8.49,6.88-15.37,15.37-15.37H245.5
+                    c8.49,0,15.37,6.88,15.37,15.37v88.49C260.87,300.59,253.99,307.47,245.5,307.47z"/>
+                <path class="st7" d="M767.63,307.54H581.5c-8.49,0-15.37-6.88-15.37-15.37v-88.49c0-8.49,6.88-15.37,15.37-15.37h186.14
+                    c8.49,0,15.37,6.88,15.37,15.37v88.49C783,300.65,776.12,307.54,767.63,307.54z"/>
+                <path class="st7" d="M245.5,608.99H59.37c-8.49,0-15.37-6.88-15.37-15.37v-88.49c0-8.49,6.88-15.37,15.37-15.37H245.5
+                    c8.49,0,15.37,6.88,15.37,15.37v88.49C260.87,602.11,253.99,608.99,245.5,608.99z"/>
+                <path class="st7" d="M767.63,608.99H581.5c-8.49,0-15.37-6.88-15.37-15.37v-88.49c0-8.49,6.88-15.37,15.37-15.37h186.14
+                    c8.49,0,15.37,6.88,15.37,15.37v88.49C783,602.11,776.12,608.99,767.63,608.99z"/>
+                <g>
+                    <g>
+                        <path class="st8" d="M260.87,272.8h75.33c0.84,0,1.68-0.02,2.52-0.08c7.75-0.56,64.07-1.29,78.84,93.39
+                            c14.44,92.55,32.13,143.22,121.25,151.3"/>
+                        <g>
+                            <polygon class="st3" points="536.07,485.53 533.1,548.63 566.13,518.56           "/>
+                        </g>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <path class="st9" d="M260.87,529.65h64.27c4.44,0,8.85-0.73,13.03-2.23c16.92-6.08,58.12-27.01,79.38-91.08
+                            c28.4-85.57,34.54-151.31,121.27-162.17"/>
+                        <g>
+                            <polygon class="st4" points="532.57,243.12 536.67,306.16 566.13,272.59          "/>
+                        </g>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <line class="st10" x1="260.87" y1="216.83" x2="538.79" y2="216.83"/>
+                        <g>
+                            <polygon class="st2" points="534.55,185.24 534.55,248.42 566.13,216.83          "/>
+                        </g>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <line class="st11" x1="260.87" y1="578.88" x2="538.79" y2="578.88"/>
+                        <g>
+                            <polygon class="st5" points="534.55,547.29 534.55,610.46 566.13,578.88          "/>
+                        </g>
+                    </g>
+                </g>
+                <!-- GAURUSH: CHANGE THESE NUMBERS TO THE BEGINNING VALUES -->
+
+                <text transform="matrix(1 0 0 1 367.6367 226.2188)" class="st12 st13" id = "tpA">30</text>
+                <text transform="matrix(1 0 0 1 368.6641 290.9712)" class="st12 st13" id = "fpA">26</text>
+
+                <text transform="matrix(1 0 0 1 362.6621 515.0352)" class="st12 st13" id = "fnA">5</text>
+                <text transform="matrix(1 0 0 1 361.6348 586.9824)" class="st12 st13" id = "tnA">39</text>
+
+                <text transform="matrix(1 0 0 1 101.8887 237.7334)"><tspan x="0" y="0" class="st12 st14">Labeled </tspan><tspan x="-26.73" y="29.6" class="st12 st14" id = "predHighA">high risk (56)</tspan></text>
+                <text transform="matrix(1 0 0 1 101.8887 539.2471)"><tspan x="0" y="0" class="st12 st14">Labeled </tspan><tspan x="-21.25" y="29.6" class="st12 st14" id = "predLowA">low risk (44)</tspan></text>
+                <text transform="matrix(1 0 0 1 600.7188 237.6724)"><tspan x="0" y="0" class="st12 st14">Actually had</tspan><tspan x="8.2" y="29.6" class="st12 st14">cancer (35)</tspan></text>
+                <text transform="matrix(1 0 0 1 600.0439 539.8506)"><tspan x="0" y="0" class="st12 st14">Did not have</tspan><tspan x="8.88" y="29.6" class="st12 st14">cancer (65)</tspan></text>
+            </svg>
+
+            <button type="button" class="btn btn-success" id = "preferA" onClick = "setThresholdsA();setThresholdsB()">I prefer this one</button>
+
+            </div>
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-5">
+              <p><b> Computer System B </b></p>
+              <div id = "chartcol2">
+              <canvas id="myChart3" width="600" height="200"></canvas>
+              <canvas id="myChart4" width="600" height="200"></canvas>
+              </div>
+
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                     viewBox="0 0 820.37 808.35" style="enable-background:new 0 0 820.37 808.35;" xml:space="preserve" >
+                <style type="text/css">
+                    .st0{fill:#FFFFFF;}
+                    .st1{fill:#E5E5E5;}
+                    .st5{fill:#3672F1;} 
+                    .st3{fill:#FF9A81;}
+                    .st4{fill:#8CB1FF;} 
+                    .st2{fill:#FF7509;} 
+                    .st6{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10;}
+                    .st7{fill:#D1D1D1;}
+                    .st8{fill:none;stroke:#FF9A81;stroke-width:26;stroke-miterlimit:10;}
+                    .st9{fill:none;stroke:#8CB1FF;stroke-width:26;stroke-miterlimit:10;}
+                    .st11{fill:none;stroke:#3672F1;stroke-width:26;stroke-miterlimit:10;}
+                    .st10{fill:none;stroke:#FF7509;stroke-width:26;stroke-miterlimit:10;}
+                    .st12{font-family:'Helvetica-Bold';}
+                    .st13{font-size:21.5841px;}
+                    .st14{font-size:24.6676px;}
+                </style>
+                <rect x="-3" y="-5" class="st0" width="827" height="827"/>
+                <path class="st7" d="M245.5,307.47H59.37c-8.49,0-15.37-6.88-15.37-15.37v-88.49c0-8.49,6.88-15.37,15.37-15.37H245.5
+                    c8.49,0,15.37,6.88,15.37,15.37v88.49C260.87,300.59,253.99,307.47,245.5,307.47z"/>
+                <path class="st7" d="M767.63,307.54H581.5c-8.49,0-15.37-6.88-15.37-15.37v-88.49c0-8.49,6.88-15.37,15.37-15.37h186.14
+                    c8.49,0,15.37,6.88,15.37,15.37v88.49C783,300.65,776.12,307.54,767.63,307.54z"/>
+                <path class="st7" d="M245.5,608.99H59.37c-8.49,0-15.37-6.88-15.37-15.37v-88.49c0-8.49,6.88-15.37,15.37-15.37H245.5
+                    c8.49,0,15.37,6.88,15.37,15.37v88.49C260.87,602.11,253.99,608.99,245.5,608.99z"/>
+                <path class="st7" d="M767.63,608.99H581.5c-8.49,0-15.37-6.88-15.37-15.37v-88.49c0-8.49,6.88-15.37,15.37-15.37h186.14
+                    c8.49,0,15.37,6.88,15.37,15.37v88.49C783,602.11,776.12,608.99,767.63,608.99z"/>
+                <g>
+                    <g>
+                        <path class="st8" d="M260.87,272.8h75.33c0.84,0,1.68-0.02,2.52-0.08c7.75-0.56,64.07-1.29,78.84,93.39
+                            c14.44,92.55,32.13,143.22,121.25,151.3"/>
+                        <g>
+                            <polygon class="st3" points="536.07,485.53 533.1,548.63 566.13,518.56           "/>
+                        </g>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <path class="st9" d="M260.87,529.65h64.27c4.44,0,8.85-0.73,13.03-2.23c16.92-6.08,58.12-27.01,79.38-91.08
+                            c28.4-85.57,34.54-151.31,121.27-162.17"/>
+                        <g>
+                            <polygon class="st4" points="532.57,243.12 536.67,306.16 566.13,272.59          "/>
+                        </g>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <line class="st10" x1="260.87" y1="216.83" x2="538.79" y2="216.83"/>
+                        <g>
+                            <polygon class="st2" points="534.55,185.24 534.55,248.42 566.13,216.83          "/>
+                        </g>
+                    </g>
+                </g>
+                <g>
+                    <g>
+                        <line class="st11" x1="260.87" y1="578.88" x2="538.79" y2="578.88"/>
+                        <g>
+                            <polygon class="st5" points="534.55,547.29 534.55,610.46 566.13,578.88          "/>
+                        </g>
+                    </g>
+                </g>
+                <!-- GAURUSH: CHANGE THESE NUMBERS TO THE BEGINNING VALUES -->
+		<text transform="matrix(1 0 0 1 367.6367 226.2188)" class="st12 st13" id = "tpB">23</text>
+                <text transform="matrix(1 0 0 1 368.6641 290.9712)" class="st12 st13" id = "fpB">36</text>
+
+                <text transform="matrix(1 0 0 1 362.6621 515.0352)" class="st12 st13" id = "fnB">12</text>
+                <text transform="matrix(1 0 0 1 361.6348 586.9824)" class="st12 st13" id = "tnB">29</text>
+
+                <text transform="matrix(1 0 0 1 101.8887 237.7334)"><tspan x="0" y="0" class="st12 st14">Labeled </tspan><tspan x="-26.73" y="29.6" class="st12 st14" id = "predHighB">high risk (59)</tspan></text>
+                <text transform="matrix(1 0 0 1 101.8887 539.2471)"><tspan x="0" y="0" class="st12 st14">Labeled </tspan><tspan x="-21.25" y="29.6" class="st12 st14" id = "predLowB">low risk (41)</tspan></text>
+                <text transform="matrix(1 0 0 1 600.7188 237.6724)"><tspan x="0" y="0" class="st12 st14">Actually had</tspan><tspan x="8.2" y="29.6" class="st12 st14">cancer (35)</tspan></text>
+                <text transform="matrix(1 0 0 1 600.0439 539.8506)"><tspan x="0" y="0" class="st12 st14">Did not have</tspan><tspan x="8.88" y="29.6" class="st12 st14">cancer (65)</tspan></text>
+            </svg>
+
+              <button type="button" class="btn btn-success" id = "preferB" onClick = "setThresholdsB();setThresholdsA()">I prefer this one</button>
+
+            </div>
+          </div>
+    </div>
+<script src="p5.js"></script>
+<script type="text/javascript" src = "charts.js"></script>
+
+</body>
+</html>
