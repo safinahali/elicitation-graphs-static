@@ -16,74 +16,92 @@ var query_num = 0
 function setThresholds(clicked_id){
 
 	//GAURUSH: any logic here needs to be replicated below. 
-
+    
+    var case_flag = 1;
+    
     button1Count++;
 
-    if((thresholdB-thresholdA) <= 0.05){
-    	window.location.href = "evaluation/index.html";
-    }
-
     //GAURUSH: change thresholds here. THIS IS NOT THE CORRECT LOGIC.
-    thresholdC = (3*thresholdA+thresholdB)/4;
-    thresholdD = (thresholdA+thresholdB)/2;
-    thresholdE = (thresholdA+3*thresholdB)/4;
+    thresholdC = ((3*thresholdA + thresholdB) / 4);
+    thresholdD = ((thresholdA + thresholdB) / 2);
+    thresholdE = ((thresholdA + 3*thresholdB) / 4);
     
 //     logic is here 
     
-    if((query_num == 0) & (clicked_id == 'preferA')){
+    if((case_flag == 1) & (query_num == 0) & (clicked_id == 'preferA')){
         
         thresholdB = thresholdD;
         
-        threshold_plot_A = thresholdA;
-        threshold_plot_B = (3*thresholdA+thresholdB)/4;
+        threshold_plot_A = thresholdA.toFixed(4);
+        threshold_plot_B = ((3*thresholdA+thresholdB)/4).toFixed(4);
+        
+        case_flag = 0;
     }
     
-    if((query_num == 0) & (clicked_id == 'preferB')){
+    if((case_flag == 1) & (query_num == 0) & (clicked_id == 'preferB')){
         
         query_num = 1;
         
-        threshold_plot_A = thresholdC;
-        threshold_plot_B = thresholdD;
+        threshold_plot_A = thresholdC.toFixed(4);
+        threshold_plot_B = thresholdD.toFixed(4);
+        
+        case_flag = 0;
     }
     
-    if((query_num == 1) & (clicked_id == 'preferA')){
+    if((case_flag == 1) & (query_num == 1) & (clicked_id == 'preferA')){
         
         query_num = 0;
         
         thresholdB = thresholdD;
         
-        threshold_plot_A = thresholdA;
-        threshold_plot_B = (3*thresholdA+thresholdB)/4;
+        threshold_plot_A = thresholdA.toFixed(4);
+        threshold_plot_B = ((3*thresholdA+thresholdB)/4).toFixed(4);
+        
+        case_flag = 0;
     }
     
-    if((query_num == 1) & (clicked_id == 'preferB')){
+    if((case_flag == 1) & (query_num == 1) & (clicked_id == 'preferB')){
         
         query_num = 2;
         
-        threshold_plot_A = thresholdD;
-        threshold_plot_B = thresholdE;
+        threshold_plot_A = thresholdD.toFixed(4);
+        threshold_plot_B = thresholdE.toFixed(4);
+        
+        case_flag = 0;
     }
     
-    if((query_num == 2) & (clicked_id == 'preferA')){
+    if((case_flag == 1) & (query_num == 2) & (clicked_id == 'preferA')){
         
         query_num = 0;
         
         thresholdA = thresholdC;
-        thresholdB = thresholdD;
+        thresholdB = thresholdE;
         
-        threshold_plot_A = thresholdA;
-        threshold_plot_B = (3*thresholdA+thresholdB)/4;
+        threshold_plot_A = thresholdA.toFixed(4);
+        threshold_plot_B = ((3*thresholdA+thresholdB)/4).toFixed(4);
+        
+        case_flag = 0;
     }
     
-    if((query_num == 2) & (clicked_id == 'preferB')){
+    if((case_flag == 1) & (query_num == 2) & (clicked_id == 'preferB')){
         
         query_num = 0;
         
         thresholdA = thresholdD;
         
-        threshold_plot_A = thresholdA;
-        threshold_plot_B = (3*thresholdA+thresholdB)/4;
+        threshold_plot_A = thresholdA.toFixed(4);
+        threshold_plot_B = ((3*thresholdA+thresholdB)/4).toFixed(4);
+        
+        case_flag = 0;
     }
+    
+    
+    if((thresholdB-thresholdA) <= 0.05){
+        window.location.href = "evaluation/index.html";
+    }
+    
+    console.log("thresh are" + thresholdA, thresholdC, thresholdD, thresholdE, thresholdB);
+    console.log("query num before is" + query_num);
     
     //GAURUSH: write an if statement here for your variables
     //deleting old graphs
@@ -343,7 +361,7 @@ function drawCharts(){
         }
     }
 
-    console.log("values are" + fpA, tnA, fpB, tnB, fnA, tpA);
+//     console.log("values are" + fpA, tnA, fpB, tnB, fnA, tpA);
 
     var ctx1 = document.getElementById('myChart1').getContext('2d');
     myChart1 = new Chart(ctx1, {
