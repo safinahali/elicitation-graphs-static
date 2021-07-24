@@ -124,6 +124,8 @@ function drawCharts(){
         }
     }
 
+    console.log("values are" + fpA, tnA, fpB, tnB, fnA, tpA);
+
     var ctx1 = document.getElementById('myChart1').getContext('2d');
     myChart1 = new Chart(ctx1, {
         type: 'bar',
@@ -158,7 +160,7 @@ function drawCharts(){
     myChart2 = new Chart(ctx2, {
         type: 'bar',
         data: {
-//             labels: ['True Positive', 'False Negative'],
+            labels: ['', ''],
             labels: ['Labelled high risk (' + String(pred_p_A) + ')', 'Labelled low risk (' + String(pred_n_A) + ')'],
             datasets: [{
                 label: '',
@@ -189,7 +191,7 @@ function drawCharts(){
     myChart3 = new Chart(ctx3, {
         type: 'bar',
         data: {
-//             labels: ['False Positive', 'True Negative'],
+            labels: ['', ''],
             datasets: [{
                 label: '',
 //                 data: [fpB*100, tnB*100],
