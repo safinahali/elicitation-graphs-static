@@ -12,17 +12,17 @@ var button2Count = 0;
 
 
 function setThresholdsA(){
+
+	//GAURUSH: any logic here needs to be replicated below. 
+
     button1Count++;
-    //GAURUSH: change thresholds here
+    //GAURUSH: change thresholds here. THIS IS NOT THE CORRECT LOGIC.
     thresholdB = (thresholdA+thresholdB)/2;
 
-    //GAURUSH: add condition here for a-b < 0.05
+    //GAURUSH: add condition here for a-b < 0.05. this needs to be modulus
     if((thresholdA-thresholdB) << 0.05){
     	window.location.href = "evaluation/index.html";
     }
-    // const context = document.getElementById('myChart1').getContext('2d');
-    // context.clearRect(0, 0, canvas.width, canvas.height);
-
 
     //GAURUSH: write an if statement here for your variables
     //deleting old graphs
@@ -34,21 +34,23 @@ function setThresholdsA(){
     //recreating graphs
     drawCharts();
 
-    //GAURUSH: change the other texts here too. This is only changing the arrow texts. Use same format.
-//     document.getElementById('tpB').textContent = (tpB*100).toFixed(0);
-//     document.getElementById('fpB').textContent = (fpB*100).toFixed(0);
-//     document.getElementById('fnB').textContent = (fnB*100).toFixed(0);
-//     document.getElementById('tnB').textContent = (tnB*100).toFixed(0);
     document.getElementById('tpB').textContent = tpB;
     document.getElementById('fpB').textContent = fpB;
     document.getElementById('fnB').textContent = fnB;
     document.getElementById('tnB').textContent = tnB;
+
+    document.getElementById('totalHighB').textContent = "high risk (" + pred_p_B + ")" ;
+    document.getElementById('totalLowB').textContent = "low risk (" + pred_n_B + ")" ;
 }
 
 function setThresholdsB(){
     button2Count++;
     //GAURUSH: change thresholds here
     thresholdA = (thresholdA+thresholdB)/2;
+
+    if((thresholdA-thresholdB) << 0.05){
+    	window.location.href = "evaluation/index.html";
+    }
 
     document.getElementById('myChart1').remove();
     document.getElementById('myChart2').remove();
@@ -57,15 +59,14 @@ function setThresholdsB(){
 
     drawCharts();
 
-    //GAURUSH: change the other texts here too. This is only changing the arrow texts. Use same format.
-//     document.getElementById('tpA').textContent = (tpA*100).toFixed(0);
-//     document.getElementById('fpA').textContent = (fpA*100).toFixed(0);
-//     document.getElementById('fnA').textContent = (fnA*100).toFixed(0);
-//     document.getElementById('tnA').textContent = (tnA*100).toFixed(0);
     document.getElementById('tpA').textContent = tpA;
     document.getElementById('fpA').textContent = fpA;
     document.getElementById('fnA').textContent = fnA;
     document.getElementById('tnA').textContent = tnA;
+
+    //GAURUSH: write your high number logic here
+    document.getElementById('totalHighA').textContent = "high risk (" + pred_p_A + ")" ;
+    document.getElementById('totalLowA').textContent = "low risk (" + pred_n_A + ")" ;
 }
 
 function drawCharts(){
