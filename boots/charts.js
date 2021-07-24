@@ -7,18 +7,31 @@ var myChart2;
 var myChart3;
 var myChart4;
 var tnA, tpA, fnA, fpA, tnB, tpB, fpB, fnA;
-var buttonCount = 0;
+var button1Count = 0;
+var button2Count = 0;
+
 
 function setThresholdsA(){
-    buttonCount++;
+    button1Count++;
+    //GAURUSH: change thresholds here
     thresholdB = (thresholdA+thresholdB)/2;
+
+    //GAURUSH: add condition here for a-b < 0.05
+    if((thresholdA-thresholdB) << 0.05){
+    	window.location.href = "evaluation/index.html";
+    }
     // const context = document.getElementById('myChart1').getContext('2d');
     // context.clearRect(0, 0, canvas.width, canvas.height);
+
+
+    //GAURUSH: write an if statement here for your variables
+    //deleting old graphs
     document.getElementById('myChart1').remove();
     document.getElementById('myChart2').remove();
     document.getElementById('myChart3').remove();
     document.getElementById('myChart4').remove();
 
+    //recreating graphs
     drawCharts();
 
     //GAURUSH: change the other texts here too. This is only changing the arrow texts. Use same format.
@@ -33,8 +46,8 @@ function setThresholdsA(){
 }
 
 function setThresholdsB(){
-    buttonCount++;
-
+    button2Count++;
+    //GAURUSH: change thresholds here
     thresholdA = (thresholdA+thresholdB)/2;
 
     document.getElementById('myChart1').remove();
@@ -56,7 +69,7 @@ function setThresholdsB(){
 }
 
 function drawCharts(){
-    if (buttonCount>0){
+    if (button1Count>0 || button2Count>0){
       var myChart1 = document.createElement('canvas');
       myChart1.setAttribute("id", "myChart1");
       myChart1.setAttribute("width", "600");
@@ -116,7 +129,7 @@ function drawCharts(){
         data: {
 //             labels: ['False Positive', 'True Negative'],
             datasets: [{
-//                 label: 'Hide',
+                label: '',
 //                 data: [fpA*100, tnA*100],
                 data: [fpA, tnA],
                 backgroundColor: [
@@ -147,7 +160,7 @@ function drawCharts(){
 //             labels: ['True Positive', 'False Negative'],
             labels: ['Labelled high risk (' + String(pred_p_A) + ')', 'Labelled low risk (' + String(pred_n_A) + ')'],
             datasets: [{
-//                 label: 'Hide',
+                label: '',
 //                 data: [tpA*100, fnA*100],
                 data: [tpA, fnA],
                 backgroundColor: [
@@ -177,7 +190,7 @@ function drawCharts(){
         data: {
 //             labels: ['False Positive', 'True Negative'],
             datasets: [{
-//                 label: 'Hide',
+                label: '',
 //                 data: [fpB*100, tnB*100],
                 data: [fpB, tnB],
                 backgroundColor: [
@@ -208,7 +221,7 @@ function drawCharts(){
 //             labels: ['True Positive', 'False Negative'],
             labels: ['Labelled high risk (' + String(pred_p_B) + ')', 'Labelled low risk (' + String(pred_n_B) + ')'],
             datasets: [{
-//                 label: 'Hide',
+                label: '',
 //                 data: [tpB*100, fnB*100],
                 data: [tpB, fnB],
                 backgroundColor: [
