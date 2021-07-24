@@ -41,11 +41,52 @@
 	  //data logging is set up here. need to log all the data selected
 	  function logdata(){
 	  	var uid = document.getElementById('uid').value;
+	  	localStorage.setItem("uid", uid);
+
 	  	var age = document.getElementById('age').value;
+	  	var genderArray = [];
+	  	var genderCheck = document.getElementsByName('gender');
+	  	var raceArray = [];
+	  	var raceCheck = document.getElementsByName('race');
+	  	var mlArray = [];
+	  	var mlCheck = document.getElementsByName('ml');
+	  	var degree;
+	  	var degreeCheck = document.getElementsByName('degree');
+
+
+	  	for (var i=0;i<genderCheck.length;i++){
+		  if ( genderCheck[i].checked ) {
+		    genderArray.push(genderCheck[i].value);
+		  }
+		}
+
+		for (var i=0;i<raceCheck.length;i++){
+		  if ( raceCheck[i].checked ) {
+		    raceArray.push(raceCheck[i].value);
+		  }
+		}
+
+		for (var i=0;i<mlCheck.length;i++){
+		  if ( mlCheck[i].checked ) {
+		    mlArray.push(mlCheck[i].value);
+		  }
+		}
+
+		for (var i=0;i<degreeCheck.length;i++){
+		  if ( degreeCheck[i].checked ) {
+		    degree = degreeCheck[i].value;
+		  }
+		}
+
 	  	var ref = database.ref(uid);
 	  	ref.push({
 	  		UID: uid,
-	  		Age: age
+	  		Age: age,
+	  		Gender: genderArray,
+	  		Race: raceArray,
+	  		Education: degree,
+	  		MLExpertise: mlArray
+
 	  	});
 
 	  	window.setTimeout(function(){
@@ -53,13 +94,12 @@
         // Move to a new location or you can do something else
         window.location.href = "prelim.html";
 
-    	}, 2000);
+    	}, 1000);
 
 	  	// window.location.href = 'prelim.html';
 	  }
 
 	  
-
 	</script>
 
 </head>
@@ -94,37 +134,38 @@
 			<p> Choose one or more genders that you identify as:</p>		
 			<div class="form-group">
 			        <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox1" value="option1" >
+			          <input class="form-check-input" type="checkbox" name="gender" id="gridCheckbox1" value="woman" >
 			          <label class="form-check-label" for="gridCheckbox1">
 			            Woman
 			          </label>
 			        </div>
 			         <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox2" value="option2" >
+			          <input class="form-check-input" type="checkbox" name="gender" id="gridCheckbox2" value="man" >
 			          <label class="form-check-label" for="gridCheckbox2">
 			            Man
 			          </label>
 			        </div>
 			         <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox3" value="option3" >
+			          <input class="form-check-input" type="checkbox" name="gender" id="gridCheckbox3" value="nonbinary" >
 			          <label class="form-check-label" for="gridCheckbox3">
 			            Non-Binary
 			          </label>
 			        </div>
 			        <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox4" value="option4" >
+			          <input class="form-check-input" type="checkbox" name="gender" id="gridCheckbox4" value="prefernot" >
 			          <label class="form-check-label" for="gridCheckbox4">
 			            Prefer not to disclose
 			          </label>
 			        </div>
 			          <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox5" value="option5" >
+			          <input class="form-check-input" type="checkbox" name="gender" id="gridCheckbox5" value="other" >
 			          <label class="form-check-label" for="gridCheckbox5">
 			            Other
 			          </label>
 			      </div>
 			        
 			</div>
+
 		</div>
 
 		<div id = "r4">
@@ -132,55 +173,55 @@
 			<div class="form-group">
 
 			        <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox1" value="option1" >
+			          <input class="form-check-input" type="checkbox" name="race" id="gridCheckbox1" value="AmericanIndian" >
 			          <label class="form-check-label" for="gridCheckbox1">
 			            American Indian or Alaskan Native
 			          </label>
 			        </div>
 			         <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox2" value="option2" >
+			          <input class="form-check-input" type="checkbox" name="race" id="gridCheckbox2" value="Asian" >
 			          <label class="form-check-label" for="gridCheckbox2">
 			            Asian
 			          </label>
 			        </div>
 			         <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox3" value="option3" >
+			          <input class="form-check-input" type="checkbox" name="race" id="gridCheckbox3" value="Black" >
 			          <label class="form-check-label" for="gridCheckbox3">
 			            Black or African American
 			          </label>
 			        </div>
 			        <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox4" value="option4" >
+			          <input class="form-check-input" type="checkbox" name="race" id="gridCheckbox4" value="Hispanic" >
 			          <label class="form-check-label" for="gridCheckbox4">
 			            Hispanic or Latino
 			          </label>
 			        </div>
 			          <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox5" value="option5" >
+			          <input class="form-check-input" type="checkbox" name="race" id="gridCheckbox5" value="MiddleEastern" >
 			          <label class="form-check-label" for="gridCheckbox5">
 			            Middle Eastern
 			          </label>
 			        </div>
 			         <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox6" value="option6" >
+			          <input class="form-check-input" type="checkbox" name="race" id="gridCheckbox6" value="Hawaiian" >
 			          <label class="form-check-label" for="gridCheckbox6">
 			            Native Hawaiian or Pacific Islander
 			          </label>
 			        </div>
 			         <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox7" value="option7" >
+			          <input class="form-check-input" type="checkbox" name="race" id="gridCheckbox7" value="White" >
 			          <label class="form-check-label" for="gridCheckbox7">
 			            White
 			          </label>
 			        </div>
 			         <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox8" value="option8" >
+			          <input class="form-check-input" type="checkbox" name="race" id="gridCheckbox8" value="Prefernot" >
 			          <label class="form-check-label" for="gridCheckbox8">
 			            Prefer not to disclose
 			          </label>
 			        </div>
 			         <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox9" value="option9" >
+			          <input class="form-check-input" type="checkbox" name="race" id="gridCheckbox9" value="Other" >
 			          <label class="form-check-label" for="gridCheckbox9">
 			            Other
 			          </label>
@@ -194,43 +235,43 @@
 			<div class="form-group">
 
 			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" >
+			          <input class="form-check-input" type="radio" name="degree" id="gridRadios1" value="lessThanHigh" >
 			          <label class="form-check-label" for="gridRadios1">
 			            Less than high school
 			          </label>
 			        </div>
 			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+			          <input class="form-check-input" type="radio" name="degree" id="gridRadios2" value="high">
 			          <label class="form-check-label" for="gridRadios2">
 			            High school or equivalent
 			          </label>
 			        </div>
 			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+			          <input class="form-check-input" type="radio" name="degree" id="gridRadios3" value="currentCollege">
 			          <label class="form-check-label" for="gridRadios3">
 			            Some college, currently enrolled in college, or two-year associate’s degree
 			          </label>
 			        </div>
 			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="option4">
+			          <input class="form-check-input" type="radio" name="degree" id="gridRadios4" value="bachelors">
 			          <label class="form-check-label" for="gridRadios4">
 			            Bachelor's degree
 			          </label>
 			        </div>
 			         <div class="form-check">
-			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios5" value="option5">
+			          <input class="form-check-input" type="radio" name="degree" id="gridRadios5" value="currentGraduate">
 			          <label class="form-check-label" for="gridRadios5">
 			            Some graduate school, or currently enrolled in graduate school
 			          </label>
 			        </div>
 			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios6" value="option6">
+			          <input class="form-check-input" type="radio" name="degree" id="gridRadios6" value="masters">
 			          <label class="form-check-label" for="gridRadios6">
 			            Master's or professional degree
 			          </label>
 			        </div>
 			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios7" value="option7">
+			          <input class="form-check-input" type="radio" name="degree" id="gridRadios7" value="phd">
 			          <label class="form-check-label" for="gridRadios7">
 			            Doctorate degree
 			          </label>
@@ -241,29 +282,29 @@
 		  </div>
 
 		  <div id = "r6">
-			<p> Choose one or more races/ethnicities that you identify as:</p>		
+			<p> What is your expertise with Machine Learning?</p>		
 			<div class="form-group">
 
 			        <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox1" value="option1" >
+			          <input class="form-check-input" type="checkbox" name="ml" id="gridCheckbox1" value="none" >
 			          <label class="form-check-label" for="gridCheckbox1">
 			            None at all
 			          </label>
 			        </div>
 			         <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox3" value="option3" >
+			          <input class="form-check-input" type="checkbox" name="ml" id="gridCheckbox3" value="beginner" >
 			          <label class="form-check-label" for="gridCheckbox3">
 			            Beginner
 			          </label>
 			        </div>
 			        <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox4" value="option4" >
+			          <input class="form-check-input" type="checkbox" name="ml" id="gridCheckbox4" value="intermediate" >
 			          <label class="form-check-label" for="gridCheckbox4">
 			            Intermediate
 			          </label>
 			        </div>
 			          <div class="form-check">
-			          <input class="form-check-input" type="checkbox" name="gridCheckbox" id="gridCheckbox5" value="option5" >
+			          <input class="form-check-input" type="checkbox" name="ml" id="gridCheckbox5" value="advanced" >
 			          <label class="form-check-label" for="gridCheckbox5">
 			            Advanced
 			          </label>
