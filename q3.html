@@ -43,9 +43,7 @@
 	  function logdata(){
 	  	var uid = localStorage.getItem("uid");
 		var q33;
-		var q34;
 	  	var q33Check = document.getElementsByName('q33');
-	  	var q34Check = document.getElementsByName('q34');
 	  	var q31 = document.getElementById('q31').value;
 	  	var q32 = document.getElementById('q32').value;
 
@@ -55,19 +53,13 @@
 		  }
 		}
 
-		for (var i=0;i<q34Check.length;i++){
-		  if ( q34Check[i].checked ) {
-		    q34 = q34Check[i].value;
-		  }
-		}
 
 	  	var ref = database.ref(uid);
 	  	ref.push({
 	  		UID: uid,
 	  		q31: q31,
 	  		q32: q32,
-	  		q33: q33,
-	  		q34: q34
+	  		q33: q33
 	  	});
 
 	  	window.setTimeout(function(){
@@ -135,7 +127,7 @@
 			          </label>
 			        </div>
 			        <div class="form-check">
-			          <input class="form-check-input" type="radio" name="q34" id="gridRadios2" value="B">
+			          <input class="form-check-input" type="radio" name="q33" id="gridRadios2" value="B">
 			          <label class="form-check-label" for="gridRadios2">
 			            Computer System B
 			          </label>
