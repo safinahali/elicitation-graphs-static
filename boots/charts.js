@@ -92,6 +92,10 @@ function drawCharts(){
             tpA = dataset[element].tp;
             fnA = dataset[element].fn;
             fpA = dataset[element].fp;
+            total_n_A = tnA + fpA;
+            total_p_A = fnA + tpA;
+            pred_n_A = tnA + fnA;
+            pred_p_A = fpA + tpA;
         }
 
         if(dataset[element].threshold.toFixed(4) == thresholdB){
@@ -99,6 +103,10 @@ function drawCharts(){
             tpB = dataset[element].tp;
             fnB = dataset[element].fn;
             fpB = dataset[element].fp;
+            total_n_B = tnB + fpB;
+            total_p_B = fnB + tpB;
+            pred_n_B = tnB + fnB;
+            pred_p_B = fpB + tpB;
         }
     }
 
@@ -106,9 +114,9 @@ function drawCharts(){
     myChart1 = new Chart(ctx1, {
         type: 'bar',
         data: {
-            labels: ['False Positive', 'True Negative'],
+//             labels: ['False Positive', 'True Negative'],
             datasets: [{
-                label: 'Hide',
+//                 label: 'Hide',
 //                 data: [fpA*100, tnA*100],
                 data: [fpA, tnA],
                 backgroundColor: [
@@ -124,7 +132,7 @@ function drawCharts(){
                     beginAtZero: true,
                     max: 100,
                     title: {
-                      text: 'Did not have cancer',
+                      text: 'Did not have cancer (' + String(total_n_A) + ')',
                       display: true
                     }
                 }
@@ -136,9 +144,10 @@ function drawCharts(){
     myChart2 = new Chart(ctx2, {
         type: 'bar',
         data: {
-            labels: ['True Positive', 'False Negative'],
+//             labels: ['True Positive', 'False Negative'],
+            labels: ['Labelled high risk (' + String(pred_p_A) + ')', 'Labelled low risk (' + String(pred_n_A) + ')'],
             datasets: [{
-                label: 'Hide',
+//                 label: 'Hide',
 //                 data: [tpA*100, fnA*100],
                 data: [tpA, fnA],
                 backgroundColor: [
@@ -154,7 +163,7 @@ function drawCharts(){
                     beginAtZero: true,
                     max: 100,
                     title: {
-                      text: 'Actually had cancer',
+                      text: 'Actually had cancer (' + String(total_p_A) + ')',
                       display: true
                     }
                 }
@@ -166,9 +175,9 @@ function drawCharts(){
     myChart3 = new Chart(ctx3, {
         type: 'bar',
         data: {
-            labels: ['False Positive', 'True Negative'],
+//             labels: ['False Positive', 'True Negative'],
             datasets: [{
-                label: 'Hide',
+//                 label: 'Hide',
 //                 data: [fpB*100, tnB*100],
                 data: [fpB, tnB],
                 backgroundColor: [
@@ -184,7 +193,7 @@ function drawCharts(){
                     beginAtZero: true,
                     max: 100,
                     title: {
-                      text: 'Did not have cancer',
+                      text: 'Did not have cancer (' + String(total_n_B) + ')',
                       display: true
                     }
                 }
@@ -196,9 +205,10 @@ function drawCharts(){
     myChart4 = new Chart(ctx4, {
         type: 'bar',
         data: {
-            labels: ['True Positive', 'False Negative'],
+//             labels: ['True Positive', 'False Negative'],
+            labels: ['Labelled high risk (' + String(pred_p_B) + ')', 'Labelled low risk (' + String(pred_n_B) + ')'],
             datasets: [{
-                label: 'Hide',
+//                 label: 'Hide',
 //                 data: [tpB*100, fnB*100],
                 data: [tpB, fnB],
                 backgroundColor: [
@@ -214,7 +224,7 @@ function drawCharts(){
                     beginAtZero: true,
                     max: 100,
                     title: {
-                      text: 'Actually had cancer',
+                      text: 'Actually had cancer (' + String(total_p_B) + ')',
                       display: true
                     }
                 }
@@ -224,5 +234,4 @@ function drawCharts(){
 
 
     }
-
 
