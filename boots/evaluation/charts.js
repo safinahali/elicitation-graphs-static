@@ -11,6 +11,44 @@ var button1Count = 0;
 var button2Count = 0;
 
 
+function setThresholds(){
+
+    button1Count++;
+
+    thresholdA = thresholdA + 1;
+    thresholdB = thresholdB + 1;
+
+    if(thresholdA > 14){
+//         SAFINAH -- When this condition is met, we move to the thank you page
+    	window.location.href = "thanks.html";
+    }
+
+    document.getElementById('myChart1').remove();
+    document.getElementById('myChart2').remove();
+    document.getElementById('myChart3').remove();
+    document.getElementById('myChart4').remove();
+
+    //recreating graphs
+    drawCharts();
+    
+    document.getElementById('tpA').textContent = tpA;
+    document.getElementById('fpA').textContent = fpA;
+    document.getElementById('fnA').textContent = fnA;
+    document.getElementById('tnA').textContent = tnA;
+
+    //GAURUSH: write your high number logic here
+    document.getElementById('predHighA').textContent = "high risk (" + pred_p_A + ")" ;
+    document.getElementById('predLowA').textContent = "low risk (" + pred_n_A + ")" ;
+
+    document.getElementById('tpB').textContent = tpB;
+    document.getElementById('fpB').textContent = fpB;
+    document.getElementById('fnB').textContent = fnB;
+    document.getElementById('tnB').textContent = tnB;
+
+    document.getElementById('predHighB').textContent = "high risk (" + pred_p_B + ")" ;
+    document.getElementById('predLowB').textContent = "low risk (" + pred_n_B + ")" ;
+}
+
 function setThresholdsA(){
 
 	//GAURUSH: any logic here needs to be replicated below. 

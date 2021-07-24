@@ -97,6 +97,7 @@ function setThresholds(clicked_id){
     
     
     if((thresholdB-thresholdA) <= 0.05){
+//         SAFINAH -- when this condition is met, we move to the evaluation
         window.location.href = "evaluation/index.html";
     }
     
