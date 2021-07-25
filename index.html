@@ -50,6 +50,8 @@
 	  	var raceCheck = document.getElementsByName('race');
 	  	var mlArray = [];
 	  	var mlCheck = document.getElementsByName('ml');
+	  	var healthArray = [];
+	  	var healthCheck = document.getElementsByName('health');
 	  	var degree;
 	  	var degreeCheck = document.getElementsByName('degree');
 
@@ -78,6 +80,12 @@
 		  }
 		}
 
+		for (var i=0;i<healthCheck.length;i++){
+		  if ( healthCheck[i].checked ) {
+		    healthArray.push(healthCheck[i].value);
+		  }
+		}
+
 	  	var ref = database.ref(uid);
 	  	ref.push({
 	  		UID: uid,
@@ -85,7 +93,8 @@
 	  		Gender: genderArray,
 	  		Race: raceArray,
 	  		Education: degree,
-	  		MLExpertise: mlArray
+	  		MLExpertise: mlArray,
+	  		Healthcare: healthArray
 
 	  	});
 
@@ -307,6 +316,39 @@
 			          <input class="form-check-input" type="checkbox" name="ml" id="gridCheckbox5" value="advanced" >
 			          <label class="form-check-label" for="gridCheckbox5">
 			            Advanced
+			          </label>
+			        </div>
+			         
+			        
+			</div>
+		  </div>
+
+		   <div id = "r7">
+			<p> What is your expertise with Healthcare?</p>		
+			<div class="form-group">
+
+			        <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="health" id="gridCheckbox1" value="none" >
+			          <label class="form-check-label" for="gridCheckbox1">
+			            None at all
+			          </label>
+			        </div>
+			         <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="health" id="gridCheckbox3" value="past" >
+			          <label class="form-check-label" for="gridCheckbox3">
+			            I have worked in healthcare in the past
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="health" id="gridCheckbox4" value="active" >
+			          <label class="form-check-label" for="gridCheckbox4">
+			            I actively work in healthcare
+			          </label>
+			        </div>
+			          <div class="form-check">
+			          <input class="form-check-input" type="checkbox" name="health" id="gridCheckbox5" value="knowledge" >
+			          <label class="form-check-label" for="gridCheckbox5">
+			            I have some knowledge about healthcare
 			          </label>
 			        </div>
 			         
