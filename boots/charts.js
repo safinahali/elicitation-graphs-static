@@ -11,12 +11,64 @@ var myChart4;
 var tnA, tpA, fnA, fpA, tnB, tpB, fpB, fnA;
 var button1Count = 0;
 var button2Count = 0;
-var query_num = 0
+var query_num = 0;
+var loadCount = 0;
+var buttonChoices = [];
+var epochs = [];
+var startTime = 0;
+ // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+var firebaseConfig = {
+apiKey: "AIzaSyDSBbFAqBoxyeauD8Floci3BrD0UkvOhgg",
+authDomain: "metric-elicitation.firebaseapp.com",
+databaseURL: "https://metric-elicitation-default-rtdb.firebaseio.com",
+projectId: "metric-elicitation",
+storageBucket: "metric-elicitation.appspot.com",
+messagingSenderId: "828132856142",
+appId: "1:828132856142:web:1a7f9b6680ed64d1348e1f",
+measurementId: "G-ZSLY684MQG"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+database = firebase.database();
+
+//data logging is set up here. need to log all the data selected
+function logdata(){
+	var uid = localStorage.getItem("uid");
+
+	var ref = database.ref(uid);
+	ref.push({
+		UID: uid,
+		thresholdA: thresholdA,
+		thresholdB: thresholdB,
+		thresholdC: thresholdC,
+		thresholdD: thresholdD,
+		query_num: query_num,
+		startTime: startTime,
+		choices: buttonChoices,
+		times: epochs
+	});
+
+	window.setTimeout(function(){
+
+// Move to a new location or you can do something else
+        window.location.href = "evaluation/index.html";
+
+}, 1000);
+
+	// window.location.href = 'prelim.html';
+}
+
+
 
 function setThresholds(clicked_id){
 
 	//GAURUSH: any logic here needs to be replicated below. 
-    
+	buttonChoices.push(clicked_id);
+	var timeNow = new Date();
+	epochs.push(timeNow);
+
     var case_flag = 1;
     
     button1Count++;
@@ -98,7 +150,7 @@ function setThresholds(clicked_id){
     
     if((thresholdB-thresholdA) <= 0.05){
 //         SAFINAH -- when this condition is met, we move to the evaluation
-        window.location.href = "evaluation/index.html";
+		logdata();
     }
     
     console.log("thresh are" + thresholdA, thresholdC, thresholdD, thresholdE, thresholdB);
@@ -308,6 +360,12 @@ function setThresholdsB(){
 }
 
 function drawCharts(){
+
+	if(loadCount<1){
+		startTime = new Date();
+		loadCount++;
+	}
+
     if (button1Count>0 || button2Count>0){
       var myChart1 = document.createElement('canvas');
       myChart1.setAttribute("id", "myChart1");

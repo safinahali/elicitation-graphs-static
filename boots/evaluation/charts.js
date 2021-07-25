@@ -9,18 +9,65 @@ var myChart4;
 var tnA, tpA, fnA, fpA, tnB, tpB, fpB, fnA;
 var button1Count = 0;
 var button2Count = 0;
+var loadCount = 0;
+var buttonChoices = [];
+var epochs = [];
+var startTime = 0;
 
+var firebaseConfig = {
+apiKey: "AIzaSyDSBbFAqBoxyeauD8Floci3BrD0UkvOhgg",
+authDomain: "metric-elicitation.firebaseapp.com",
+databaseURL: "https://metric-elicitation-default-rtdb.firebaseio.com",
+projectId: "metric-elicitation",
+storageBucket: "metric-elicitation.appspot.com",
+messagingSenderId: "828132856142",
+appId: "1:828132856142:web:1a7f9b6680ed64d1348e1f",
+measurementId: "G-ZSLY684MQG"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+database = firebase.database();
 
-function setThresholds(){
+function logdata(){
+    var uid = localStorage.getItem("uid");
+
+    var ref = database.ref(uid);
+    ref.push({
+        UID: uid,
+        thresholdA: thresholdA,
+        thresholdB: thresholdB,
+        startTime: startTime,
+        evalchoices: buttonChoices,
+        evaltimes: epochs
+    });
+
+    window.setTimeout(function(){
+
+// Move to a new location or you can do something else
+        window.location.href = "thanks.html";
+
+}, 1000);
+
+    // window.location.href = 'prelim.html';
+}
+
+function setThresholds(clicked_id){
 
     button1Count++;
 
     thresholdA = thresholdA + 1;
     thresholdB = thresholdB + 1;
 
+    buttonChoices.push(clicked_id);
+    console.log(clicked_id);
+    
+    var currentTime = new Date();
+    epochs.push(currentTime);
+
     if(thresholdA > 14){
 //         SAFINAH -- When this condition is met, we move to the thank you page
-    	window.location.href = "thanks.html";
+    	logdata();
     }
 
     document.getElementById('myChart1').remove();
@@ -59,7 +106,7 @@ function setThresholdsA(){
 
     //GAURUSH: add condition here for a-b < 0.05. this needs to be modulus
     if(thresholdB > 29){
-    	window.location.href = "thanks.html";
+    	logdata();
     }
 
     //GAURUSH: write an if statement here for your variables
@@ -87,7 +134,7 @@ function setThresholdsB(){
     thresholdA = thresholdA+1;
 
     if(thresholdA > 14){
-    	window.location.href = "thanks.html";
+    	logdata();
     }
 
     document.getElementById('myChart1').remove();
@@ -107,7 +154,14 @@ function setThresholdsB(){
     document.getElementById('predLowA').textContent = "low risk (" + pred_n_A + ")" ;
 }
 
+
 function drawCharts(){
+
+    if(loadCount<1){
+        startTime = new Date();
+        loadCount++;
+    }
+
     if (button1Count>0 || button2Count>0){
       var myChart1 = document.createElement('canvas');
       myChart1.setAttribute("id", "myChart1");
