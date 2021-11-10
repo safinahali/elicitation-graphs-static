@@ -61,7 +61,6 @@ function logdata(){
 }
 
 
-
 function setThresholds(clicked_id){
 
 	//GAURUSH: any logic here needs to be replicated below. 
@@ -426,7 +425,7 @@ function drawCharts(){
     myChart1 = new Chart(ctx1, {
         type: 'bar',
         data: {
-//             labels: ['False Positive', 'True Negative'],
+            // labels: ['False Positive', 'True Negative'],
             labels: ['', ''],
             datasets: [{
                 label: '',
@@ -439,7 +438,22 @@ function drawCharts(){
                 borderWidth: 1
             }]
         },
+
         options: {
+        	plugins: {
+			    legend: {
+			      display: false
+			    }
+			  },
+
+		    tooltips: {
+		        callbacks: {
+		           label: function(tooltipItem) {
+		                  return tooltipItem.yLabel;
+		           }
+		        }
+		    },
+        	
             scales: {
                 y: {
                     beginAtZero: true,
@@ -471,6 +485,22 @@ function drawCharts(){
             }]
         },
         options: {
+
+        	plugins: {
+			    legend: {
+			      display: false
+			    }
+			  },
+
+		    tooltips: {
+		        callbacks: {
+		           label: function(tooltipItem) {
+		                  return tooltipItem.yLabel;
+		           }
+		        }
+		    },
+        	
+
             scales: {
                 y: {
                     beginAtZero: true,
@@ -501,6 +531,21 @@ function drawCharts(){
             }]
         },
         options: {
+
+        	plugins: {
+			    legend: {
+			      display: false
+			    }
+			  },
+
+		    tooltips: {
+		        callbacks: {
+		           label: function(tooltipItem) {
+		                  return tooltipItem.yLabel;
+		           }
+		        }
+		    },
+        	
             scales: {
                 y: {
                     beginAtZero: true,
@@ -532,6 +577,21 @@ function drawCharts(){
             }]
         },
         options: {
+
+        	plugins: {
+			    legend: {
+			      display: false
+			    }
+			  },
+
+		    tooltips: {
+		        callbacks: {
+		           label: function(tooltipItem) {
+		                  return tooltipItem.yLabel;
+		           }
+		        }
+		    },
+        	
             scales: {
                 y: {
                     beginAtZero: true,
