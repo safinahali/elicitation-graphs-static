@@ -12,6 +12,8 @@
   <!-- The core Firebase JS SDK is always required and must be listed first -->
 	<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
 
+	<link href="sticky-footer.css" rel="stylesheet">
+
 	<!-- TODO: Add SDKs for Firebase products that you want to use
 	     https://firebase.google.com/docs/web/setup#available-libraries -->
 	<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
@@ -85,12 +87,12 @@
 			<div class="row"> 
 				<div class = "col-md-6">
 					<p> <b> Computer System A </b></p> 
-					<img id = "bar" src="img/bar.svg">
+					<!-- <img id = "bar" src="img/bar.svg"> -->
 					<img id = "chart" src="img/chart.svg">
 				</div>
 				<div class = "col-md-6">
 					<p> <b> Computer System B </b></p> 
-					<img id = "bar" src="img/bar-2.svg">
+					<!-- <img id = "bar" src="img/bar-2.svg"> -->
 					<img id = "chart" src="img/chart-2.svg">
 				</div>
 			</div>
@@ -142,6 +144,12 @@
 	</div>
 
 </div>
+
+		<footer class="footer">
+			<div class="progress">
+			  <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">40%</div>
+			</div>
+		</footer>
 
 </body>
 </html>

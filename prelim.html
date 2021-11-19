@@ -8,12 +8,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="style.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- Add this to all the htmls -->
+    <link href="sticky-footer.css" rel="stylesheet">
+
 </head>
 <body>
 
-<div class="container">
+	<div class="container">
 
-	
 		  <h3>Cancer Diagnosis </h3>
 		  <p>Some doctors use computer systems to identify the presence of cancer in patients’ cell images. These computer systems are not always accurate and do make errors. 
 
@@ -23,7 +26,7 @@
 			<div class="row"> 
 				<div class = "col-md-6">
 					<p> <b> Computer System A </b></p> 
-					<img id = "bar" src="img/bar.svg">
+					<!-- <img id = "bar" src="img/bar.svg"> -->
 					<img id = "chart" src="img/chart.svg">
 				</div>
 			</div>
@@ -35,7 +38,13 @@
 		  <button type="button" class="btn btn-success text-right" onclick="location.href='q1.html'"> Next </button>
 	</div>
 
-</div>
+		<footer class="footer">
+			<div class="progress">
+			  <div class="progress-bar" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">10%</div>
+			</div>
+		</footer>
+
 
 </body>
+
 </html>
