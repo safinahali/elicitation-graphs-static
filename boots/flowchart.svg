@@ -66,8 +66,8 @@
 <text transform="matrix(1 0 0 1 125.4312 137.7256)" class="st10 st12">cancer (20)</text>
 <text transform="matrix(1 0 0 1 148.1895 369.2383)" class="st10 st12">Did not have</text>
 <text transform="matrix(1 0 0 1 130.0967 394.4395)" class="st10 st12">cancer (80)</text>
-<text transform="matrix(1 0 0 1 572.9023 112.4717)" class="st10 st12">Labeled</text>
+<text transform="matrix(1 0 0 1 572.9023 112.4717)" class="st10 st12">Predicted</text>
 <text transform="matrix(1 0 0 1 579.8838 137.6738)" class="st10 st12">high risk (18)</text>
-<text transform="matrix(1 0 0 1 572.3281 369.752)" class="st10 st12">Labeled</text>
+<text transform="matrix(1 0 0 1 572.3281 369.752)" class="st10 st12">Predicted</text>
 <text transform="matrix(1 0 0 1 579.8887 394.9541)" class="st10 st12">low risk (82)</text>
 </svg>
